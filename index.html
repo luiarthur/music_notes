@@ -3,34 +3,38 @@ layout: page
 description: "Notes on Harmonay & Counterpoint"
 ---
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-    </a>
-    <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-</div>
-<hr>
+
+{% for file in site.notes %}
+{% assign path = file.url | split: "/" %}<br>
+{% assign dir = path[2] %}
+{{ dir }}
+uniq??? 
+https://shopify.github.io/liquid/filters/uniq/
 {% endfor %}
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
+<h1>Counterpoint</h1>
+{% for note in site.notes %}
+{% if note.url contains "counterpoint" %}
+<ul>
+  <li>
+    <a href='{{note.url}}'>
+      {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
+    </a>
+  </li>
 </ul>
 {% endif %}
+{% endfor %}
+
+<h1>Harmony</h1>
+{% for note in site.notes %}
+{% if note.url contains "harmony" %}
+<ul>
+  <li>
+    <a href='{{note.url}}'>
+      {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
+    </a>
+  </li>
+</ul>
+{% endif %}
+{% endfor %}
+

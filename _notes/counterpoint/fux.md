@@ -3,6 +3,7 @@ layout:     post
 title:      Fux
 subtitle:   ""
 author:     "Arthur Lui"
+date:       2017-01-02
 #header-img: "img/post-bg-01.jpg"
 ---
 

@@ -1,9 +1,7 @@
 ---
-layout:     post
-title:      Fux
-subtitle:   ""
-author:     "Arthur Lui"
-#header-img: "img/post-bg-01.jpg"
+layout: post
+author: "Arthur Lui"
+date: 2017-01-01
 ---
 
 {% include abc.html id="1" code="
