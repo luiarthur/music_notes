@@ -1,0 +1,6 @@
+<div id='music{{ include.id }}'></div> 
+<script type="text/javascript">
+var music = `{{ include.code }}`;
+ABCJS.renderAbc('music{{ include.id }}', music);
+</script>
+
