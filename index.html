@@ -14,7 +14,7 @@ description: "Notes on Harmonay & Counterpoint"
     {% if dir == sec_downcase %}
       <ul>
         <li>
-          <a href='{{note.url}}'>
+          <a href='{{note.url | prepend: site.baseurl}}'>
             {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
           </a>
         </li>
