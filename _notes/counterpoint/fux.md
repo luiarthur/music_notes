@@ -1,26 +1,41 @@
 ---
-layout:     post
-title:      Fux
-subtitle:   ""
-author:     "Arthur Lui"
-date:       2017-01-02
-#header-img: "img/post-bg-01.jpg"
+date:       2017-02-11
 ---
 
-{% include abc.html id="1" code="
-T:Speed the Plough
-|:{G}ABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|
-GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|
+***
+
+#### Direct Motion
+
+{% include abc.html code="
+L:1/1
+[CE][DF][EG] | [EG][DF][CE] | [EG][B,D] |
 "%}
 
 
 ***
 
-blablabla
+#### Contrary Motion
 
-{% include abc.html id="2" code="
-T:Superman
-|:{G}ABc dedB|dedB dedB|c2ec B2dB|c2A2 A2BA|
-GABc dedB|dedB dedB|c2ec B2dB|A2F2 G4:|
+{% include abc.html code="
+L:1/1
+[CE][_B,F] | [a,,E] | [CE][B,G] | [A,A] [CE] |
 "%}
+
+*** 
+
+#### Figure 5
+
+**Take-aways:** 
+
+- Cantus firmus in the bass line; counterpoint in soprano.
+- must begin and end on perfect consonance.
+
+{% include abc.html code="
+L:1/1
+V:1 name=counterpoint cl=treble
+V:2 name=cantus-firmus cl=alto
+[V:1] A|A|G|A|B|c|c|B|d|^c|d||
+[V:2] D|F|E|D|G|F|A|F|F|E|A||
+"%}
+
 

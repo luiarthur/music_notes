@@ -14,14 +14,22 @@ url: "http://luiarthur.github.io"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-permalink: /:title # pretty
+#permalink: /:title # pretty
 paginate: 5
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 gems: [jekyll-paginate, jekyll-feed]
 
+
+defaults:
+  -
+    scope:
+      type: "notes"
+    values:
+      layout: "post"
+
+
 collections:
   notes:
     output: true
     permalink: /notes/:path/
-
