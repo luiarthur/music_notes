@@ -1,6 +1,5 @@
-<div id='music{{ include.id }}'></div> 
+<div id='music{% increment music_counter %}'></div> 
 <script type="text/javascript">
 var music = `{{ include.code }}`;
-ABCJS.renderAbc('music{{ include.id }}', music);
+ABCJS.renderAbc('music{{ music_counter | minus: 1}}', music);
 </script>
-

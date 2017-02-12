@@ -3,38 +3,22 @@ layout: page
 description: "Notes on Harmonay & Counterpoint"
 ---
 
+<!--add new sections (seperated by comma) here:-->
+{% assign sections = "Counterpoint, Harmony" | split: "," %}
 
-{% for file in site.notes %}
-{% assign path = file.url | split: "/" %}<br>
-{% assign dir = path[2] %}
-{{ dir }}
-uniq??? 
-https://shopify.github.io/liquid/filters/uniq/
+{% for sec in sections %}
+  <h1>{{sec}}</h1>
+  {% for note in site.notes %}
+    {% assign dir = note.url | split: "/" | slice: 2 | first | downcase %}
+    {% assign sec_downcase = sec | downcase | strip %}
+    {% if dir == sec_downcase %}
+      <ul>
+        <li>
+          <a href='{{note.url}}'>
+            {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
+          </a>
+        </li>
+      </ul>
+    {% endif %}
+  {% endfor %}
 {% endfor %}
-
-<h1>Counterpoint</h1>
-{% for note in site.notes %}
-{% if note.url contains "counterpoint" %}
-<ul>
-  <li>
-    <a href='{{note.url}}'>
-      {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
-    </a>
-  </li>
-</ul>
-{% endif %}
-{% endfor %}
-
-<h1>Harmony</h1>
-{% for note in site.notes %}
-{% if note.url contains "harmony" %}
-<ul>
-  <li>
-    <a href='{{note.url}}'>
-      {{ note.date | date: "%-d %b, %Y"}}&raquo; {{note.title}}
-    </a>
-  </li>
-</ul>
-{% endif %}
-{% endfor %}
-
